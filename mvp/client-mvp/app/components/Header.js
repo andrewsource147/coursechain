@@ -4,10 +4,15 @@ const Header = () => (
   <div className={"home-header"}>
     <div className={"home-logo"}>
       <Link href="/">
-        <img src="/static/logo.svg" alt="CourseChain" className={"home-logo-img"}/>
+        <img src="/static/logo1.svg" alt="CourseChain" className={"home-logo-img"}/>
       </Link>
     </div>
     <div className={"sign-in"}>
+      <div className={"text"}>
+        <Link href="/courses">
+          Courses
+        </Link>
+      </div>
       <div className={"text"}>Sign in</div>
     </div>
   </div>
