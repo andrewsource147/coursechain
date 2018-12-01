@@ -56,6 +56,49 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.cancel-course {
+  padding: 50px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    margin-right: 10px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-cancel,
+  .button-confirm {
+    padding: 12px 40px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  .button-cancel {
+    background-color: #666;
+    margin-right: 20px;
+  }
+
+  .button-confirm {
+    background-color: $green;
+  }
+}
+
 #kyber-widget {
   width: 400px;
   margin: 0 auto;

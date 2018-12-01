@@ -10,7 +10,9 @@ class Course extends Component {
     super(props);
 
     this.state = {
-      isWidgetModalActive: false
+      isWidgetModalActive: false,
+      isCourseModalActive: false,
+      isCourseBought: false
     }
   }
 
@@ -67,7 +69,23 @@ class Course extends Component {
       params,
       errors: {}
     })
+
+    setTimeout(function() {
+      this.setState({isCourseBought: true});
+    }.bind(this), 3000);
   }
+
+  handleOpenCancelModal = () => {
+    this.setState({isCourseModalActive: true});
+  };
+
+  handleCloseCancelModal = () => {
+    this.setState({isCourseModalActive: false});
+  };
+
+  handleCancelling = () => {
+    alert(1);
+  };
 
   render() {
     return (
@@ -138,7 +156,13 @@ class Course extends Component {
                     </div>
                   </div>
                   <div className={"second-col-third-row"}>
-                    <button onClick={() => this.buyByTokens()}>Learn now</button>
+                    {!this.state.isCourseBought && (
+                      <button onClick={() => this.buyByTokens()}>Learn now</button>
+                    )}
+
+                    {this.state.isCourseBought && (
+                      <button onClick={() => this.handleOpenCancelModal()}>Cancel this Course</button>
+                    )}
                   </div>
                   <div className={"second-col-forth-row"}>
                     <div>Include</div>
@@ -226,6 +250,34 @@ class Course extends Component {
         <Modal isActive={this.state.isWidgetModalActive} handleClose={this.handleCloseWidgetModal}>
           <div className={"common__kyber-widget-container"}>
             <div id="kyber-widget" className="kyber_widget"></div>
+          </div>
+        </Modal>
+
+        <Modal isActive={this.state.isCourseModalActive} handleClose={this.handleCloseCancelModal}>
+          <div className={"cancel-course"}>
+            <h2>Reason of cancelling this course?</h2>
+            <form>
+              <label>
+                <input type="radio" name="reason" value="1"/>
+                It's not suitable for me
+              </label>
+              <label>
+                <input type="radio" name="reason" value="2"/>
+                There is nothing new I can learn from this course
+              </label>
+              <label>
+                <input type="radio" name="reason" value="3"/>
+                I'm out of money at the moment, so I need to refund to get by
+              </label>
+              <label>
+                <input type="radio" name="reason" value="4"/>
+                I dont know what this course is talking about
+              </label>
+            </form>
+            <div className={"flex"}>
+              <div className={"button-cancel"} onClick={() => this.handleCloseCancelModal()}>Cancel</div>
+              <div className={"button-confirm"} onClick={() => this.handleCancelling()}>Confirm</div>
+            </div>
           </div>
         </Modal>
       </Layout>
