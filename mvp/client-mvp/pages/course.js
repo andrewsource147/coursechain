@@ -146,7 +146,7 @@ class Course extends Component {
                     <div>
                       <div>Course Fee</div>
                       <div>
-                        <span>499</span>
+                        <span>10</span>
                         <span>USD</span>
                       </div>
                       <div>Lesson time: 3 weeks</div>
