@@ -82,26 +82,25 @@ class Course extends Component {
               <div className={"first-col"}>
                 <div className={"first-row"}>
                   <div className={"row-main-title"}>What you will learn</div>
-                  <div className={"first-row-info"}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat enim vulputate nulla blandit, sit amet consequat dui pretium.
+                  <div className={"first-row-info first-item"}>
+                  Learn the latest technology on your terms. Pick up where you left off across any device, or download videos for offline viewing.
                   </div>
                   <div className={"first-row-info"}>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mollis orci at lorem congue, id euismod justo venenatis.
+                  Create and manage playlists that align to the technical skills you want to acquire.
                   </div>
                 </div>
                 <div className={"second-row"}>
                   <div className={"row-main-title"}>
                     Requirements
                   </div>
-                  <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat enim vulputate nulla blandit, sit amet consequat dui pretium. 
+                  <div className={"text-content"}>
+                  There is no software, hardware or experience required in order to complete this course, but practicing the techniques discussed on an emulator or live PLC are necessary steps toward eventual mastery.
                   </div>
                 </div>
                 <div className={"third-row"}>
                   <div className={"row-main-title"}>Description</div>
-                  <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat enim vulputate nulla blandit, sit amet consequat dui pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mollis orci at lorem congue, id euismod justo venenatis. 
-                    In nec ligula ac orci posuere ullamcorper tempor a mauris. Duis iaculis massa et interdum auctor. Nam vulputate enim sit amet lorem lobortis faucibus. Sed iaculis sit amet purus ut lacinia.
+                  <div className={"text-content"}>
+                  This course is designed to equip the novice with no prior PLC programming experience with the basic tools necessary to create a complete PLC program using ladder logic common to most current platforms. Using the Rockwell software RSLogix 500 and FactoryTalk View Studio, we will be covering such topics as general controls, digital and analog IO, ladder logic programming, alarm / notification handling, HMI, emulation, best practices and more. In the end, we will go through an entire, working PLC program and HMI line by line to solidify comprehension of the learning objectives.
                   </div>
                 </div>
               </div>
@@ -153,11 +152,15 @@ class Course extends Component {
                   <div className={"lesson"}>Table of content</div>
                   <div className={"lesson"}>
                     <div>Lession 1: </div>
-                    <div>Introduction</div>
+                    <div>Take any one of these courses, and prepare to earn a <strong>Microsoft Technology Associate (MTA)</strong></div>
                   </div>
                   <div className={"lesson"}>
                     <div>Lession 2: </div>
-                    <div>Content</div>
+                    <div>Take these courses, and prepare to earn a <strong>Microsoft Certified Solutions Associate (MCSA): Windows Server 2016</strong>  certification.</div>
+                  </div>
+                  <div className={"lesson"}>
+                    <div>Lession 3: </div>
+                    <div>Take these courses, and prepare to earn a <strong>Microsoft Certified Solutions Associate (MCSA): Windows Server 2012</strong> certification.</div>
                   </div>
                 </div>
               </div>
@@ -165,7 +168,41 @@ class Course extends Component {
           </div>
 
           <div className={"wrapper-footer"}>
-  
+            <div className={"feedback-title"}>Learners Feedback</div>
+            <div className={"rating"}>
+              {/* <div className={"average-rate"}></div>    
+              <div className={"rate-point"}>
+                <div className={"rate"}>
+                  <div className={"number-rate"}></div>
+                  <div className={"start-5"}></div>
+                  <div className={"percent"}>80%</div>
+                </div>
+                <div className={"rate"}>
+                  <div className={"number-rate"}></div>
+                  <div className={"start-4"}></div>
+                  <div className={"percent"}>10%</div>
+                </div>
+                <div className={"rate"}>
+                  <div className={"number-rate"}></div>
+                  <div className={"start-3"}></div>
+                  <div className={"percent"}>10%</div>
+                </div>
+                <div className={"rate"}>
+                  <div className={"number-rate"}></div>
+                  <div className={"start-2"}></div>
+                  <div className={"percent"}>0%</div>
+                </div>
+              </div> */}
+            </div>
+            <div className={"review"}>
+              <div className={"review-title"}>Reviews</div>
+              <div className={"input"}>
+                <input type="text" placeholder="type your comment..."/>
+              </div>
+              <div className={"submit"}>
+                <a href="">Submit</a> 
+              </div>
+            </div>
           </div>
           <div></div>
         </div>
