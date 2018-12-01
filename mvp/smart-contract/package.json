@@ -1,0 +1,42 @@
+{
+  "name": "stackchain-contracts",
+  "version": "1.0.0",
+  "description": "package for stackchain-contracts repository",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "artifacts": "0.0.1",
+    "bignumber.js": "^7.0.1",
+    "ethereumjs-util": "^5.2.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "rlp": "^2.0.0",
+    "secp256k1": "^3.5.0",
+    "solc": "^0.4.24",
+    "truffle": "^4.1.11",
+    "truffle-flattener": "^1.2.5",
+    "web3": "^1.0.0-beta.34",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewsource147/StateOfChain.git"
+  },
+  "keywords": [
+    "IEO",
+    "smart",
+    "contract"
+  ],
+  "author": "Cuong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewsource147/StateOfChain.git/issues"
+  },
+  "homepage": "https://github.com/andrewsource147/StateOfChain/blob/master/README.md"
+}

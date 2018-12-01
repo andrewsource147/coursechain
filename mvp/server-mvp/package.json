@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "simple-node-logger": "^0.93.40",
+    "sqlite3": "^4.0.3"
+  }
+}
