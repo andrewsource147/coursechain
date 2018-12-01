@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="11px" viewBox="0 0 10 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/content/file_copy_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1026.36842,623 L1020.05263,623 C1019.47368,623 1019,623.45 1019,624 L1019,631 L1020.05263,631 L1020.05263,624 L1026.36842,624 L1026.36842,623 Z M1025.84211,625 L1029,628 L1029,633 C1029,633.55 1028.52632,634 1027.94737,634 L1022.15263,634 C1021.57368,634 1021.10526,633.55 1021.10526,633 L1021.11053,626 C1021.11053,625.45 1021.57895,625 1022.15789,625 L1025.84211,625 Z M1025.31579,628.5 L1028.21053,628.5 L1025.31579,625.75 L1025.31579,628.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Course-Chain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Courses-Detail" transform="translate(-1019.000000, -623.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="icon/content/file_copy_24px" fill="#999999" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
