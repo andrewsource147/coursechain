@@ -8,6 +8,11 @@ const Header = () => (
       </Link>
     </div>
     <div className={"sign-in"}>
+      <div className={"text"}>
+        <Link href="/courses">
+          Courses
+        </Link>
+      </div>
       <div className={"text"}>Sign in</div>
     </div>
   </div>
