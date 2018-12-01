@@ -36,11 +36,13 @@ class Course extends Component {
     const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
 
     const courseId = 3;
-    const orderId = 3;
+    const orderId = 5;
+    const srcToken = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+    const srcAmount = "100000000000000000";
     const dest = "0xad6d458402f60fd3bd25163575031acdce07538d";
-    const destAddress = wrapperContract;
-    const maxDesAmount = "10000000000000000000";
-    const minConvertRate = "149937500000000000000";
+    const destAddress = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
+    const maxDestAmount = "10000000000000000000";
+    const minConversionRate = "575814601000000000000";
     const kyberNetworkProxy = "0x818e6fecd516ecc3849daf6845e3ec868087b755";
     const commissionId = "0x9559034c287a0e73a9a68288bc27eb8189427aa1";
 
@@ -52,14 +54,14 @@ class Course extends Component {
           resolve(Math.pow(10, 17));
         })
       },
-      getTxData: function(sourceToken, sourceAmount) {
+      getTxData: function() {
         const data = ethWrapperContract.methods.buyCourse(
-          courseId, orderId, sourceToken, sourceAmount, dest, destAddress,
-          maxDesAmount, minConvertRate, kyberNetworkProxy, commissionId
+          courseId, orderId, srcToken, srcAmount, dest, destAddress,
+          maxDestAmount, minConversionRate, kyberNetworkProxy, commissionId
         ).encodeABI();
 
         return new Promise((resolve) => {
-          resolve({ value: 0, data, gasLimit: 800000, to: wrapperContract })
+          resolve({ value: Math.pow(10, 17), data, gasLimit: 800000, to: wrapperContract })
         })
       },
       params,
