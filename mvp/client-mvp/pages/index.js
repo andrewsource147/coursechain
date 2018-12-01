@@ -1,6 +1,7 @@
 import Layout from '../app/components/Layout.js'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Link from 'next/link';
 
 class CourseList extends Component {
   render() {
@@ -49,8 +50,15 @@ class CourseList extends Component {
                     <div class="detail">
                     Token conversion enable payment to teacher with stable token to standardize the course's fee.
                     </div>
-                    <div class="try-it">
-                      <button class="btn-sc">Try it now</button>
+                    <div class="try-it btn-sc">
+                      
+                      {/* <button class="btn-sc">Try it now</button> */}
+                      {/* <Link href={{ pathname: '/courses', query: { id: 1 } }}>
+                        <a className={"courses__course-button common__button"}>Apply NOW</a>
+                      </Link> */}
+                      <Link href="/courses">
+                        <a>Learn Now</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
