@@ -1,9 +1,57 @@
 import Layout from '../app/components/Layout.js'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'next/router'
+import { withRouter } from 'next/router';
+import Web3 from 'web3';
 
 class Course extends Component {
+  buyByTokens() {
+    const params = {
+      network: "ropsten",
+      productId: 1,
+      productName: "AWS Certified Solutions Architect - Associate",
+      productAvatar: "https://udemy-images.udemy.com/course/240x135/438522_500f_6.jpg",
+      pinnedTokens: ["ETH", "DAI"]
+    };
+    const url = "https://ropsten.infura.io";
+    const web3 = new Web3(new Web3.providers.HttpProvider(url, 3000));
+    const WRAPPER_ABI = [{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"withrawFundTeacher","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ETH_TOKEN_ADDRESS","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listCourse","outputs":[{"name":"price","type":"uint256"},{"name":"teacher","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_price","type":"uint256"}],"name":"addCourse","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"cancelOrder","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_adminAddr","type":"address"}],"name":"transferAdmin","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listOrder","outputs":[{"name":"courseId","type":"uint256"},{"name":"orderTime","type":"uint256"},{"name":"user","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"},{"name":"srcAmount","type":"uint256"},{"name":"dest","type":"address"},{"name":"destAddress","type":"address"},{"name":"maxDestAmount","type":"uint256"},{"name":"minConversionRate","type":"uint256"},{"name":"kyberNetworkProxy","type":"address"},{"name":"walletId","type":"address"}],"name":"buyCourse","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":false,"name":"price","type":"uint256"},{"indexed":true,"name":"teacher","type":"address"}],"name":"AddCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":true,"name":"user","type":"address"}],"name":"BuyCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":false,"name":"priceUnlock","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"}],"name":"TeacherWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":false,"name":"priceUnlock","type":"uint256"}],"name":"StudentCancel","type":"event"}];
+    const wrapperContract = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
+    const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
+
+    const courseId = 1;
+    const orderId = 1;
+    const srcToken = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+    const srcAmount = 100000000000000000;
+    const dest = "0xad6d458402f60fd3bd25163575031acdce07538d";
+    const destAddress = "0x9559034C287A0E73A9a68288Bc27Eb8189427AA1";
+    const maxDestAmount = 10000000000000000000;
+    const minConversionRate = 575814601000000000000;
+    const kyberNetworkProxy = "818e6fecd516ecc3849daf6845e3ec868087b755";
+    const commissionId = "0x" + Array(41).join("0");
+
+    window.kyberWidgetInstance.render({
+      appId: "kyber-widget",
+      wrapper: wrapperContract,
+      getPrice: function () {
+        return new Promise((resolve) => {
+          resolve(10);
+        })
+      },
+      getTxData: function() {
+        const data = ethWrapperContract.methods.buyCourse(
+          courseId, orderId, srcToken, srcAmount, dest, destAddress,
+          maxDestAmount, minConversionRate, kyberNetworkProxy, commissionId
+        );
+
+        return new Promise((resolve) => {
+          resolve({ value: 0, data, gasLimit: 800000, to: wrapperContract })
+        })
+      },
+      params
+    })
+  }
+
   render() {
     return (
       <Layout dispatch={this.props.dispatch}>
