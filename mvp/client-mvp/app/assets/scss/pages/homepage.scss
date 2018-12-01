@@ -9,6 +9,7 @@
     align-items: center;
     img {
       height: 50px;
+      margin-left: 15px;
     }
     .home-logo-title {
       margin-left: 10px;
@@ -47,14 +48,17 @@
   .sign-in {
     display: flex;
     .text {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: bold;
       margin: 0 15px;
       a {
         color: #222222;
-        &:hover, &:visited {
-          color: #222222;
+        &:hover {
+          color: $green;
         }
+      }
+      &:hover {
+        color: $green;
       }
     }
   }
@@ -84,7 +88,7 @@
       position: relative;
       .hone-background {
         height: 500px;
-        background-image: url(/static/true_background.png);
+        background-image: url(/static/background.svg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
