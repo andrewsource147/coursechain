@@ -1,0 +1,276 @@
+.course-detail {
+  line-height: 1.25;
+  .first-component, .second-component, .third-component {
+    display: flex;
+    width: 935px;
+    margin: 0 auto;
+  }
+  // .second-component, .third-component {
+  //   // background-color: #fafafa;
+  // }
+  .wrapper-component {
+    background-color: #fafafa;
+  }
+  .first-col {
+    width: calc(100% - 335px);
+    .row-main-title {
+      font-size: 16px;
+      font-style: normal;
+      letter-spacing: normal;
+      color: #222222;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+
+  .first-component-background {
+    background-color: #0d9e58;
+  }
+
+  .first-component {
+    padding: 30px 0 10px 0;
+    // width: 935px;
+    // margin: 0 auto;
+    color: white;
+    .big-title {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    .small-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .info-detail {
+      margin: 10px 0;
+      span {
+        font-size: 14px;
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .second-component {
+    padding-top: 15px;
+    // width: 935px;
+    // margin: 0 auto;
+    display: flex;
+    .first-row {
+      border: solid 1px #e3e3e3;
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 4px;
+      // >div:first-child {
+      //   // font-family: OpenSans;
+      //   font-size: 16px;
+      //   font-style: normal;
+      //   letter-spacing: normal;
+      //   color: #222222;
+      //   font-weight: 600;
+      //   margin-bottom: 15px;
+      // }
+      .first-row-info {
+        padding-left: 25px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 8px;
+          border-bottom: 1px solid #666666;
+          border-right: 1px solid #666666;
+          transform: rotate(45deg);
+          left: 0;
+          top: 3px;
+        }
+      }
+    }
+    .second-row, .third-row {
+      margin-top: 15px;
+    }
+    .second-col {
+      box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14);
+      background-color: #fafafa;
+      width: 300px;
+      margin-left: 35px;
+      position: relative;
+      top: -215px;
+      &-content {
+        padding: 0 30px;
+      }
+      &-first-row {
+        height: 200px;
+        // background-color: $green;
+        margin-bottom: 20px;
+        background: url(/static/course-preview.svg) center no-repeat;
+        background-size: cover;
+      }
+      &-second-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        div:first-child {
+          div:first-child {
+            color: #222222;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          div:nth-child(2) {
+            margin: 5px 0;
+            span {
+              font-size: 14px;
+              &:first-child {
+                font-size: 35px;
+              }
+            }
+          }
+          div:last-child {
+            font-size: 13px;
+            color: #666666;
+          }
+        }
+        .highest-rate {
+          width: 57px;
+          height: 57px;
+          border-radius: 50%;
+          background: #fad347;
+          font-size: 12px;
+          color: #222222;
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
+      }
+      &-third-row {
+        margin: 25px 0 30px;
+        
+        button {
+          width: 100%;
+          height: 50px;
+          border-radius: 35px;
+          background-color: $green;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: white;
+          outline: none;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      &-forth-row {
+        font-size: 14px;
+        div:first-child {
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+        div:last-child {
+          margin-bottom: 50px;
+        }
+        .item {
+          position: relative;
+          margin: 10px 0;
+          padding-left: 20px;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            left: 0;
+            top: 3px;
+            background-image: url(/static/item1.svg);
+          }
+
+          // &:first-child {
+          //   &::before {
+          //     background-image: url(/static/item1.svg);
+          //   } 
+          // }
+          &:nth-child(2) {
+            &::before {
+              background-image: url(/static/item2.svg);
+            } 
+          }
+          &:nth-child(3) {
+            &::before {
+              background-image: url(/static/item3.svg);
+            } 
+          }
+          &:nth-child(4) {
+            &::before {
+              background-image: url(/static/item4.svg);
+            } 
+          }
+          &:nth-child(5) {
+            &::before {
+              background-image: url(/static/item5.svg);
+            } 
+          }
+        }
+      }
+
+    }
+  }
+  .third-component {
+    .first-col {
+      .user-info-full {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        >div:first-child {
+          width: 60px;
+          height: 60px;
+          background: url(/static/expert-1.svg) center no-repeat;
+          background-size: contain;
+          margin-right: 25px;
+        }
+        .user-info {
+          .user-name {
+            font-size: 16px;
+            font-weight: 600;
+          }
+          div:nth-child(2) {
+            font-size: 12px;
+            color: #666666;
+          }
+          div:last-child {
+            display: flex;
+            align-items: baseline;
+            >div {
+              span:first-child {
+                font-size: 12px;
+                color: #999999;
+              }
+              span:last-child {
+                font-size: 13px;
+                color: #666666;
+                margin-left: 10px;
+              }
+            }
+            >div:last-child {
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+      .table-content {
+        .lesson {
+          margin-bottom: 15px;
+          font-size: 14px;
+        }
+        >div:first-child {
+          margin-bottom: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
