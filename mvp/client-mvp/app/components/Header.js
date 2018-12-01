@@ -10,7 +10,7 @@ const Header = () => (
     <div className={"sign-in"}>
       <div className={"text"}>
         <Link href="/courses">
-          Courses
+          <a>Courses</a>
         </Link>
       </div>
       <div className={"text"}>Sign in</div>
