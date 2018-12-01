@@ -70,14 +70,6 @@ class Course extends Component {
   render() {
     return (
       <Layout dispatch={this.props.dispatch}>
-        <button onClick={() => this.buyByTokens()}>OPEN</button>
-
-        <Modal isActive={this.state.isWidgetModalActive} handleClose={this.handleCloseWidgetModal}>
-          <div className={"common__kyber-widget-container"}>
-            <div id="kyber-widget" className="kyber_widget"></div>
-          </div>
-        </Modal>
-        {/* {this.props.router.query.id} */}
         <div className={"course-detail"}>
           <div className={"first-component-background"}>
             <div className="first-component">
@@ -145,7 +137,7 @@ class Course extends Component {
                     </div>
                   </div>
                   <div className={"second-col-third-row"}>
-                    <button>Learn now</button>
+                    <button onClick={() => this.buyByTokens()}>Learn now</button>
                   </div>
                   <div className={"second-col-forth-row"}>
                     <div>Include</div>
@@ -191,6 +183,12 @@ class Course extends Component {
           </div>
           <div></div>
         </div>
+
+        <Modal isActive={this.state.isWidgetModalActive} handleClose={this.handleCloseWidgetModal}>
+          <div className={"common__kyber-widget-container"}>
+            <div id="kyber-widget" className="kyber_widget"></div>
+          </div>
+        </Modal>
       </Layout>
     )
   }
