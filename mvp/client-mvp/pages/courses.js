@@ -1,6 +1,7 @@
 import Layout from '../app/components/Layout.js'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Link from 'next/link'
 
 class Courses extends Component {
   render() {
@@ -34,7 +35,9 @@ class Courses extends Component {
                     <div className={"courses__course-lecturer-name"}>Teacher - Gordon Linoff</div>
                     <div className={"courses__course-student"}>10 Students</div>
                     <div className={"courses__course-review"}>1 Reviews</div>
-                    <a href={"/"} className={"courses__course-button common__button"}>Apply NOW</a>
+                    <Link href={{ pathname: '/course', query: { id: 1 } }}>
+                      <a className={"courses__course-button common__button"}>Apply NOW</a>
+                    </Link>
                   </div>
                 </div>
 
@@ -47,7 +50,9 @@ class Courses extends Component {
                     <div className={"courses__course-lecturer-name"}>Teacher - Gordon Linoff</div>
                     <div className={"courses__course-student"}>10 Students</div>
                     <div className={"courses__course-review"}>1 Reviews</div>
-                    <a href={"/"} className={"courses__course-button common__button"}>Apply NOW</a>
+                    <Link href={{ pathname: '/course', query: { id: 2 } }}>
+                      <a className={"courses__course-button common__button"}>Apply NOW</a>
+                    </Link>
                   </div>
                 </div>
 
@@ -60,7 +65,9 @@ class Courses extends Component {
                     <div className={"courses__course-lecturer-name"}>Teacher - Gordon Linoff</div>
                     <div className={"courses__course-student"}>10 Students</div>
                     <div className={"courses__course-review"}>1 Reviews</div>
-                    <a href={"/"} className={"courses__course-button common__button"}>Apply NOW</a>
+                    <Link href={{ pathname: '/course', query: { id: 3 } }}>
+                      <a className={"courses__course-button common__button"}>Apply NOW</a>
+                    </Link>
                   </div>
                 </div>
               </div>
