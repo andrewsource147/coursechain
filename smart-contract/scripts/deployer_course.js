@@ -52,23 +52,8 @@ console.log("from", sender);
 async function sendTx(txObject) {
   const txTo = txObject._parent.options.address;
 
-  // let gasLimit;
-  // try {
-  //   gasLimit = await txObject.estimateGas();
-  //   if (gasLimit < 30000) {
-  //     gasLimit = 500 * 1000;
-  //   }
-  // }
-  // catch (e) {
-  //   gasLimit = 500 * 1000;
-  // }
-
-  // if (txTo !== null) {
-  //   gasLimit = 500 * 1000;
-  // }
 
   let gasLimit = 3000000
-  //  console.log(gasLimit)
   const txData = txObject.encodeABI();
   const txFrom = account.address;
   const txKey = account.privateKey;
@@ -93,7 +78,6 @@ async function sendTx(txObject) {
 }
 
 async function deployContract(solcOutput, contractName, ctorArgs) {
-  //console.log(JSON.stringify({solcOutput, contractName, ctorArgs}))
 
   const actualName = contractName;
   const bytecode = solcOutput.contracts[actualName].bytecode;
@@ -145,33 +129,6 @@ async function main() {
 
   console.log("CourseChain address", CourseChainAddress);
 
-  // rateContractAddress = "0x" + web3.utils.sha3(RLP.encode([IEOAddress,1])).slice(12).substring(14);
-  // rateContractAddress = web3.utils.toChecksumAddress(rateContractAddress);
-  // console.log("Rate address", rateContractAddress);
-  // let rateAbi = output.contracts["IEORate.sol:IEORate"].interface;
-  // let rateContract = await new web3.eth.Contract(JSON.parse(rateAbi), rateContractAddress);
-
-  // console.log("IEO");
-
-  // // add alerter
-  // console.log("Add alerter");
-  // await sendTx(IEOContract.methods.addAlerter(alerter));
-
-  // // add kyc operator
-  // console.log("Add kyc operator");
-  // await sendTx(IEOContract.methods.addOperator(kycOperator));
-
-  // console.log("white list addresses");
-  // //whitelist addresses
-  // for(let i = 0; i < whiteListAddresses.length; i++) {
-  //   await sendTx(IEOContract.methods.whiteListAddress(whiteListAddresses[i], true));
-  // }
-
-  // // transfer admin
-  // console.log("transfer admin");
-  // await sendTx(IEOContract.methods.transferAdminQuickly(admin));
-
-  // set initial rate
 
   const signedTxsJson = JSON.stringify({ from: sender, txs: signedTxs }, null, 2);
   if (signedTxOutput) {
@@ -203,33 +160,5 @@ let filename;
 let content;
 let jsonInput;
 
-// try{
-//   content = fs.readFileSync(configPath, 'utf8');
-//   //console.log(content.substring(2892,2900));
-//   //console.log(content.substring(3490,3550));
-//   jsonInput = JSON.parse(content);
-//   parseInput(jsonInput);
-// }
-// catch(err) {
-//   console.log(err);
-//   process.exit(-1)
-// }
-
-// function printParams(jsonInput) {
-//     dictOutput = {};
-//     dictOutput["IEO Address"] = IEOAddress;
-//     dictOutput["IEO Rate Address"] = rateContractAddress;
-//     dictOutput["constructor"] = jsonInput["constructor"];
-//     dictOutput["operators"] = jsonInput["operators"];
-//     dictOutput["whiteListAddresses"] = jsonInput["whiteListAddresses"];
-//     dictOutput["rateEthToToken"] = jsonInput["initialRateEthToToken"];
-//     const json = JSON.stringify(dictOutput, null, 2);
-//     console.log(json);
-//     const outputFileName = jsonInput["output filename"];
-//     console.log(outputFileName, 'write');
-//     fs.writeFileSync(outputFileName, json);
-// }
-
 main();
 
-//console.log(deployContract(output, "cont",5));

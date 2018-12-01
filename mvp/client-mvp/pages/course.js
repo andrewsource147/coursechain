@@ -3,15 +3,31 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'next/router';
 import Web3 from 'web3';
+import Modal from '../app/components/Modal';
 
 class Course extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isWidgetModalActive: false
+    }
+  }
+
+  handleCloseWidgetModal = () => {
+    this.setState({isWidgetModalActive: false});
+  };
+
   buyByTokens() {
+    this.setState({isWidgetModalActive: true});
+
     const params = {
       network: "ropsten",
-      productId: 1,
+      productId: this.props.router.query.id,
       productName: "AWS Certified Solutions Architect - Associate",
       productAvatar: "https://udemy-images.udemy.com/course/240x135/438522_500f_6.jpg",
-      pinnedTokens: ["ETH", "DAI"]
+      pinnedTokens: ["ETH", "DAI"],
+      disabledTokens: []
     };
     const url = "https://ropsten.infura.io";
     const web3 = new Web3(new Web3.providers.HttpProvider(url, 3000));
@@ -19,43 +35,43 @@ class Course extends Component {
     const wrapperContract = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
     const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
 
-    const courseId = 1;
-    const orderId = 1;
+    const courseId = 3;
+    const orderId = 5;
     const srcToken = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-    const srcAmount = 100000000000000000;
+    const srcAmount = "100000000000000000";
     const dest = "0xad6d458402f60fd3bd25163575031acdce07538d";
-    const destAddress = "0x9559034C287A0E73A9a68288Bc27Eb8189427AA1";
-    const maxDestAmount = 10000000000000000000;
-    const minConversionRate = 575814601000000000000;
-    const kyberNetworkProxy = "818e6fecd516ecc3849daf6845e3ec868087b755";
-    const commissionId = "0x" + Array(41).join("0");
+    const destAddress = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
+    const maxDestAmount = "10000000000000000000";
+    const minConversionRate = "575814601000000000000";
+    const kyberNetworkProxy = "0x818e6fecd516ecc3849daf6845e3ec868087b755";
+    const commissionId = "0x9559034c287a0e73a9a68288bc27eb8189427aa1";
 
     window.kyberWidgetInstance.render({
       appId: "kyber-widget",
       wrapper: wrapperContract,
       getPrice: function () {
         return new Promise((resolve) => {
-          resolve(10);
+          resolve(Math.pow(10, 17));
         })
       },
       getTxData: function() {
         const data = ethWrapperContract.methods.buyCourse(
           courseId, orderId, srcToken, srcAmount, dest, destAddress,
           maxDestAmount, minConversionRate, kyberNetworkProxy, commissionId
-        );
+        ).encodeABI();
 
         return new Promise((resolve) => {
-          resolve({ value: 0, data, gasLimit: 800000, to: wrapperContract })
+          resolve({ value: Math.pow(10, 17), data, gasLimit: 800000, to: wrapperContract })
         })
       },
-      params
+      params,
+      errors: {}
     })
   }
 
   render() {
     return (
       <Layout dispatch={this.props.dispatch}>
-        {/* {this.props.router.query.id} */}
         <div className={"course-detail"}>
           <div className={"first-component-background"}>
             <div className="first-component">
@@ -122,7 +138,7 @@ class Course extends Component {
                     </div>
                   </div>
                   <div className={"second-col-third-row"}>
-                    <button>Learn now</button>
+                    <button onClick={() => this.buyByTokens()}>Learn now</button>
                   </div>
                   <div className={"second-col-forth-row"}>
                     <div>Include</div>
@@ -206,6 +222,12 @@ class Course extends Component {
           </div>
           <div></div>
         </div>
+
+        <Modal isActive={this.state.isWidgetModalActive} handleClose={this.handleCloseWidgetModal}>
+          <div className={"common__kyber-widget-container"}>
+            <div id="kyber-widget" className="kyber_widget"></div>
+          </div>
+        </Modal>
       </Layout>
     )
   }

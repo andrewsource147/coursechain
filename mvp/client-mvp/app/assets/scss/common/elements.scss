@@ -50,4 +50,21 @@ h1, h2, h3, h4, h5, h6 {
       background-color: $green-light;
     }
   }
+
+  &__kyber-widget-container {
+    padding: 20px 0;
+  }
+}
+
+#kyber-widget {
+  width: 400px;
+  margin: 0 auto;
+
+  &.kyber_widget .kyber_widget-pay-info .kyber_widget-product-avatar .kyber_widget-info-2__content {
+    margin-bottom: 5px;
+
+    div:last-child {
+      width: calc(100% - 115px);
+    }
+  }
 }

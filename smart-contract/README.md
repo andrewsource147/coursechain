@@ -2,3 +2,12 @@
 
 
 Smart contract  repo
+
+to run deploy CourseChain Smartcontract
+
+```npm install```
+
+```cd scripts```
+
+```node deployer_course.js --config-path params.json --gas-price-gwei 50 --print-private-key false --rpc-url https://ropsten.infura.io```
+
