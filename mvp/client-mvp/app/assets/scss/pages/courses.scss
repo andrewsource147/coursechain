@@ -10,8 +10,16 @@
     &-title {
       font-family: $font-cera;
       font-size: 62px;
-      font-weight: 600;
+      font-weight: 400;
       color: white;
+    }
+
+    &-desc {
+      font-family: $font-cera;
+      font-size: 20px;
+      color: #ffffff;
+      font-weight: 100;
+      line-height: 1.4;
     }
 
     &::after {
@@ -26,6 +34,16 @@
   }
 
   &__selling-point {
+    width: 48%;
+    position: relative;
+    font-family: $font-cera;
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.4;
+
+    &:last-child {
+      width: 46%;
+    }
 
     &::before {
       content: '';
@@ -33,7 +51,9 @@
       height: 14px;
       display: inline-block;
       background-image: url("/static/icon-checked.svg");
-      margin-right: 10px;
+      position: absolute;
+      left: -25px;
+      top: 3px;
     }
 
     &-container {
@@ -41,9 +61,9 @@
       justify-content: space-between;
       max-width: 850px;
       margin: 0 auto;
-      padding: 30px 100px;
+      padding: 40px 60px;
       position: absolute;
-      bottom: -20px;
+      bottom: -30px;
       left: 0;
       right: 0;
       background-color: white;
@@ -53,12 +73,12 @@
 
   &__body {
     background-color: #fbfafb;
-    padding: 50px 0;
+    padding: 70px 0 50px;
 
     &-title {
       font-weight: 400;
       margin-bottom: 20px;
-      font-size: 36px;
+      font-size: 33px;
       color: #222222;
     }
   }

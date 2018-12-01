@@ -10,9 +10,13 @@ class Courses extends Component {
           <div className={"courses__header"}>
             <div className="small-container">
               <h2 className={"courses__header-title"}>Learn on Demand</h2>
+              <div className={"courses__header-desc"}>
+                <div>Easy payment, any token, one click.</div>
+                <div>Course progression with guarantee.</div>
+              </div>
               <div className={"courses__selling-point-container"}>
-                <div className={"courses__selling-point"}>Easy payment, any token, one click.</div>
-                <div className={"courses__selling-point"}>Course progression with guarantee.</div>
+                <div className={"courses__selling-point"}>Funds release to token are based on course progression, withdraw at anytime.</div>
+                <div className={"courses__selling-point"}>Payment is powered by token conversion, course fee is standardized with stable token.</div>
               </div>
             </div>
           </div>
