@@ -12,78 +12,39 @@ a {
   text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.small-container {
+  width: 850px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
 .bold {
   font-weight: bold;
 }
 
 .common {
-  &__ask-question {
-    font-weight: bold;
-    display: inline-block;
-    font-family: $font-cera;
-    font-size: 14px;
-    color: white;
-    background-color: $green;
-    border-radius: 30px;
-    padding: 17px 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all .3s;
-
-    &:hover {
-      background-color: $green-light;
-      Box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)
-    }
-  }
-
-  &__sort {
-    display: flex;
-  }
-
-  &__sort-item {
-    background-color: $grey;
-    font-size: 12px;
-    color: $grey-dark;
-    margin-left: 10px;
-    padding: 5px 17px;
-    border-top: 3px solid $grey;
-    border-bottom: 3px solid $grey;
-    cursor: pointer;
-    transition: all .3s;
-
-    &.active,
-    &:hover {
-      color: $green;
-      background-color: white;
-      border-color: white;
-      border-bottom-color: $green;
-      box-shadow: 0 2px 4px rgba(184, 184, 184, 0.5);
-    }
-  }
-
-  &__input {
-    padding: 10px;
-    min-height: 20px;
-    width: 100%;
-    border-radius: 3px;
-    outline: none;
-    border: 1px solid $grey-lighter;
-  }
-
-  &__textarea {
-    resize: vertical;
-    height: 150px;
-  }
-
   &__button {
     display: inline-block;
     color: white;
-    padding: 10px 20px;
+    padding: 7px 30px;
+    word-spacing: 2px;
     background-color: $green;
-    font-size: 13px;
-    border-radius: 3px;
     cursor: pointer;
     transition: background-color .3s;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
 
     &:hover {
       background-color: $green-light;

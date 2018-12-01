@@ -32,8 +32,6 @@ export function newWeb3Instance(){
             web3Instance = false
             break
     }
-    console.log("web3_type")
-    console.log(type)
     return web3Instance
 }   
 
