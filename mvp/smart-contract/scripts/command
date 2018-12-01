@@ -1,0 +1,3 @@
+node deployer_kyc.js --config-path params.json --gas-price-gwei 50 --print-private-key false --rpc-url https://ropsten.infura.io
+
+node deployer_votes.js --config-path params.json --gas-price-gwei 50 --print-private-key false --rpc-url https://ropsten.infura.io

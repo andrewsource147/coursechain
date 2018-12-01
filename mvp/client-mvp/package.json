@@ -1,0 +1,32 @@
+{
+  "name": "stackchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/jdenticon": "^1.3.1",
+    "@zeit/next-sass": "^1.0.1",
+    "autoprefixer": "^9.3.1",
+    "axios": "^0.18.0",
+    "jdenticon": "^2.1.0",
+    "next": "^7.0.2",
+    "next-redux-saga": "^3.0.0",
+    "next-redux-wrapper": "^2.0.0",
+    "node-sass": "^4.10.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2",
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/action/done_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="554.181818 1092.98507 546.545455 1085.46269 544 1087.97015 554.181818 1098 576 1076.50746 573.454545 1074"></polygon>
+    </defs>
+    <g id="StackChain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Stack-Overflow-Detail" transform="translate(-544.000000, -1074.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="icon/action/done_24px" fill="#0D9E58" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
