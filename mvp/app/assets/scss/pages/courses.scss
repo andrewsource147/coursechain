@@ -89,6 +89,7 @@
   &__course {
     width: 31%;
     border: solid 1px #e3e3e3;
+    cursor: pointer;
     transition: all .3s;
 
     &:hover {
@@ -108,7 +109,29 @@
 
     &-data {
       position: relative;
-      padding: 20px 90px 50px 20px;
+      padding: 30px 90px 50px 20px;
+    }
+
+    &-marked {
+      width: 50px;
+      height: 50px;
+      color: white;
+      position: absolute;
+      left: 20px;
+      top: -30px;
+      border-radius: 50%;
+      background-color: #EF8100;
+      font-size: 11px;
+      line-height: 1.3;
+      text-align: center;
+      display: flex;
+      align-items: center;
+
+      &--yellow {
+        color: #222;
+        background-color: #f7ca36;
+        font-size: 10px;
+      }
     }
 
     &-lecturer-avatar {
