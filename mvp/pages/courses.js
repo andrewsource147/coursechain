@@ -32,9 +32,9 @@ class Courses extends Component {
                   <div className={"courses__course-data"}>
                     <div className={"courses__course-marked"}>Best Seller</div>
                     <div className={"courses__course-lecturer-avatar"} style={{backgroundImage: "url(/static/expert-1.svg)"}}/>
-                    <div className={"courses__course-title"}>Blockchain in real life</div>
+                    <div className={"courses__course-title"}>The Complete Cyber Security Course</div>
                     <div className={"courses__course-price"}>$9.99</div>
-                    <div className={"courses__course-lecturer-name"}>Teacher - Williams</div>
+                    <div className={"courses__course-lecturer-name"}>Teacher - Peter Ng</div>
                     <div className={"courses__course-student"}>200 Students</div>
                     <div className={"courses__course-review"}>50 Reviews</div>
                     <Link href={{ pathname: '/course', query: { id: 1 } }}>
