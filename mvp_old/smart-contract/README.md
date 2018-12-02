@@ -1,4 +1,0 @@
-# README
-
-
-Smart contract  repo
