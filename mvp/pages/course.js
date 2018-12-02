@@ -176,6 +176,10 @@ class Course extends Component {
               </div>
               <div className={"second-col"}>
                 <div className={"second-col-first-row"}>
+                  <div className="play-button">
+                    <div className="icon"></div>
+                    <div className="text">Preview this course</div>
+                  </div>
                 </div>
                 <div className={"second-col-content"}>
                   <div className={"second-col-second-row"}>
