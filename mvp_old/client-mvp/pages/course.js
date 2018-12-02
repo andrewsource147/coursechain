@@ -93,10 +93,20 @@ class Course extends Component {
       "0xad6d458402f60fd3bd25163575031acdce07538d"
     ).encodeABI();
 
-    web3.eth.sendTransaction({from: "0x0859A7958E254234FdC1d200b941fFdfCAb02fC1", to: "0x3a20339e253f7ab78d51713eb28eac8588ae72eb", data: data}, function(err, transactionHash) {
-      console.log(err)
-      console.log(transactionHash)
-    });
+    web3.eth.getCoinbase((error, result) => {
+      console.log(error)
+      if (error || !result) {
+        var error = new Error("Cannot get coinbase")
+        console.log(error)
+      } else {
+        web3.eth.sendTransaction({from: result, to: "0x3a20339e253f7ab78d51713eb28eac8588ae72eb", data: data}, function(err, transactionHash) {
+          console.log(err)
+          console.log(transactionHash)
+          this.state.setState({isCourseBought: false})
+        })    
+      }
+    })
+    
 
     this.handleCloseCancelModal();
   };

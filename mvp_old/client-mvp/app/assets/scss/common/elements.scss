@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-opensans;
+  color: $black-light;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.small-container {
+  width: 850px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.common {
+  &__button {
+    display: inline-block;
+    color: white;
+    padding: 7px 30px;
+    word-spacing: 2px;
+    background-color: $green;
+    cursor: pointer;
+    transition: background-color .3s;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $green-light;
+    }
+  }
+
+  &__kyber-widget-container {
+    padding: 20px 0;
+  }
+}
+
+.cancel-course {
+  padding: 50px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    margin-right: 10px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-cancel,
+  .button-confirm {
+    padding: 12px 40px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  .button-cancel {
+    background-color: #666;
+    margin-right: 20px;
+  }
+
+  .button-confirm {
+    background-color: $green;
+  }
+}
+
+#kyber-widget {
+  width: 400px;
+  margin: 0 auto;
+
+  &.kyber_widget .kyber_widget-pay-info .kyber_widget-product-avatar .kyber_widget-info-2__content {
+    margin-bottom: 5px;
+
+    div:last-child {
+      width: calc(100% - 115px);
+    }
+  }
+}
