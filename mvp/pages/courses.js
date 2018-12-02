@@ -28,10 +28,10 @@ class Courses extends Component {
               <div className={"courses__course-container"}>
                 <Link href={{ pathname: '/course', query: { id: 1 } }}>
                 <div className={"courses__course"}>
-                  <div className={"courses__course-background"} style={{backgroundImage: "url(/static/background-course-2.png)"}}/>
+                  <div className={"courses__course-background"} style={{backgroundImage: "url(/static/background-course-1.png)"}}/>
                   <div className={"courses__course-data"}>
                     <div className={"courses__course-marked"}>Best Seller</div>
-                    <div className={"courses__course-lecturer-avatar"} style={{backgroundImage: "url(/static/expert-1.svg)"}}/>
+                    <div className={"courses__course-lecturer-avatar"} style={{backgroundImage: "url(/static/expert-2.svg)"}}/>
                     <div className={"courses__course-title"}>The Complete Cyber Security Course</div>
                     <div className={"courses__course-price"}>$9.99</div>
                     <div className={"courses__course-lecturer-name"}>Teacher - Peter Ng</div>
@@ -46,10 +46,10 @@ class Courses extends Component {
 
                 <Link href={{ pathname: '/course', query: { id: 2 } }}>
                 <div className={"courses__course"}>
-                  <div className={"courses__course-background"} style={{backgroundImage: "url(/static/background-course-1.png)"}}/>
+                  <div className={"courses__course-background"} style={{backgroundImage: "url(/static/background-course-2.png)"}}/>
                   <div className={"courses__course-data"}>
                     <div className={"courses__course-marked courses__course-marked--yellow"}>Highest Rated</div>
-                    <div className={"courses__course-lecturer-avatar"} style={{backgroundImage: "url(/static/expert-2.svg)"}}/>
+                    <div className={"courses__course-lecturer-avatar"} style={{backgroundImage: "url(/static/expert-1.svg)"}}/>
                     <div className={"courses__course-title"}>AWS Certified Solutions Architect - Associate</div>
                     <div className={"courses__course-price"}>$10</div>
                     <div className={"courses__course-lecturer-name"}>Teacher - Gordon Linoff</div>
