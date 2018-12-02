@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/social/person_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M324,296 C325.6575,296 327,294.6575 327,293 C327,291.3425 325.6575,290 324,290 C322.3425,290 321,291.3425 321,293 C321,294.6575 322.3425,296 324,296 Z M324.5,297 C322.664375,297 319,297.893333 319,299.666667 L319,301 L330,301 L330,299.666667 C330,297.893333 326.335625,297 324.5,297 Z" id="path-1"></path>
+    </defs>
+    <g id="Course-Chain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Courses-Detail" transform="translate(-319.000000, -290.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="icon/social/person_24px" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

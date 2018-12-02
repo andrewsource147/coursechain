@@ -139,8 +139,8 @@ class Course extends Component {
                   <span>Last updated 11/2018</span>
                 </div>
                 <div className={"info-detail"}>
-                  <span>123,456 Learners</span>
-                  <span>123,456 Learners</span>
+                  <span className="learner">123,456 Learners</span>
+                  <span className="review">1000 Reviews</span>
                 </div>
               </div>
               <div>
@@ -223,8 +223,8 @@ class Course extends Component {
                     <div className={"user-name"}>Gordon Linoff</div>
                     <div>Cisco CCNA, IT Networking Fundamentals</div>
                     <div>
-                      <div><span>Courses </span><span>23000</span></div>
-                      <div><span>Learners </span><span>600000</span></div>
+                      <div className="courese-icon"><span>Courses </span><span>23000</span></div>
+                      <div className="learner-icon"><span>Learners </span><span>600000</span></div>
                     </div>
                   </div>
                 </div>
@@ -291,8 +291,8 @@ class Course extends Component {
                       <div className={"rate-star"}></div>
                     </div>
                     <div className={"date"}>2/11/2018</div>
-                    <div className="comment-content">Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c). 
-                      Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c).
+                    <div className="comment-content">
+                      The lesson is very useful, the teachers are very enthusiastic and scientific on teaching. The payment method is also very modern, expect yous guys will extend this model more and more :)
                     </div>
                   </div>
                 </div>
