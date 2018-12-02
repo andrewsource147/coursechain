@@ -9,10 +9,20 @@ class Course extends Component {
   constructor(props) {
     super(props);
 
+    const url = "https://ropsten.infura.io";
+    const web3 = new Web3(new Web3.providers.HttpProvider(url, 3000));
+    const WRAPPER_ABI = [{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"withrawFundTeacher","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ETH_TOKEN_ADDRESS","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listCourse","outputs":[{"name":"price","type":"uint256"},{"name":"teacher","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_price","type":"uint256"}],"name":"addCourse","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"cancelOrder","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_adminAddr","type":"address"}],"name":"transferAdmin","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listOrder","outputs":[{"name":"courseId","type":"uint256"},{"name":"orderTime","type":"uint256"},{"name":"user","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"},{"name":"srcAmount","type":"uint256"},{"name":"dest","type":"address"},{"name":"destAddress","type":"address"},{"name":"maxDestAmount","type":"uint256"},{"name":"minConversionRate","type":"uint256"},{"name":"kyberNetworkProxy","type":"address"},{"name":"walletId","type":"address"}],"name":"buyCourse","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":false,"name":"price","type":"uint256"},{"indexed":true,"name":"teacher","type":"address"}],"name":"AddCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":true,"name":"user","type":"address"}],"name":"BuyCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":false,"name":"priceUnlock","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"}],"name":"TeacherWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":false,"name":"priceUnlock","type":"uint256"}],"name":"StudentCancel","type":"event"}];
+    const wrapperContract = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
+    const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
+
     this.state = {
+      orderId: Math.floor(Math.random() * 99999999),
       isWidgetModalActive: false,
       isCourseModalActive: false,
-      isCourseBought: false
+      isCourseBought: false,
+      web3: web3,
+      wrapperContract: wrapperContract,
+      ethWrapperContract: ethWrapperContract
     }
   }
 
@@ -31,14 +41,8 @@ class Course extends Component {
       pinnedTokens: ["ETH", "DAI"],
       disabledTokens: []
     };
-    const url = "https://ropsten.infura.io";
-    const web3 = new Web3(new Web3.providers.HttpProvider(url, 3000));
-    const WRAPPER_ABI = [{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"withrawFundTeacher","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ETH_TOKEN_ADDRESS","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listCourse","outputs":[{"name":"price","type":"uint256"},{"name":"teacher","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_price","type":"uint256"}],"name":"addCourse","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"}],"name":"cancelOrder","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_adminAddr","type":"address"}],"name":"transferAdmin","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"listOrder","outputs":[{"name":"courseId","type":"uint256"},{"name":"orderTime","type":"uint256"},{"name":"user","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_courseId","type":"uint256"},{"name":"_orderId","type":"uint256"},{"name":"src","type":"address"},{"name":"srcAmount","type":"uint256"},{"name":"dest","type":"address"},{"name":"destAddress","type":"address"},{"name":"maxDestAmount","type":"uint256"},{"name":"minConversionRate","type":"uint256"},{"name":"kyberNetworkProxy","type":"address"},{"name":"walletId","type":"address"}],"name":"buyCourse","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":false,"name":"price","type":"uint256"},{"indexed":true,"name":"teacher","type":"address"}],"name":"AddCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"courseId","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":true,"name":"user","type":"address"}],"name":"BuyCourse","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":false,"name":"priceUnlock","type":"uint256"},{"indexed":true,"name":"orderId","type":"uint256"}],"name":"TeacherWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"teacher","type":"address"},{"indexed":true,"name":"orderId","type":"uint256"},{"indexed":false,"name":"priceUnlock","type":"uint256"}],"name":"StudentCancel","type":"event"}];
-    const wrapperContract = "0x3a20339e253f7ab78d51713eb28eac8588ae72eb";
-    const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
-
     const courseId = 3;
-    const orderId = 5;
+    const orderId = this.state.orderId;
     const srcToken = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
     const srcAmount = "100000000000000000";
     const dest = "0xad6d458402f60fd3bd25163575031acdce07538d";
@@ -50,22 +54,22 @@ class Course extends Component {
 
     window.kyberWidgetInstance.render({
       appId: "kyber-widget",
-      wrapper: wrapperContract,
+      wrapper: this.state.wrapperContract,
       getPrice: function () {
         return new Promise((resolve) => {
           resolve(Math.pow(10, 17));
         })
       },
       getTxData: function() {
-        const data = ethWrapperContract.methods.buyCourse(
+        const data = this.state.ethWrapperContract.methods.buyCourse(
           courseId, orderId, srcToken, srcAmount, dest, destAddress,
           maxDestAmount, minConversionRate, kyberNetworkProxy, commissionId
         ).encodeABI();
 
         return new Promise((resolve) => {
-          resolve({ value: Math.pow(10, 17), data, gasLimit: 800000, to: wrapperContract })
+          resolve({ value: Math.pow(10, 17), data, gasLimit: 800000, to: this.state.wrapperContract })
         })
-      },
+      }.bind(this),
       params,
       errors: {}
     })
@@ -84,7 +88,17 @@ class Course extends Component {
   };
 
   handleCancelling = () => {
-    alert(1);
+    const data = this.state.ethWrapperContract.methods.cancelOrder(
+      this.state.orderId,
+      "0xad6d458402f60fd3bd25163575031acdce07538d"
+    ).encodeABI();
+
+    web3.eth.sendTransaction({from: "0x0859A7958E254234FdC1d200b941fFdfCAb02fC1", to: "0x3a20339e253f7ab78d51713eb28eac8588ae72eb", data: data}, function(err, transactionHash) {
+      console.log(err)
+      console.log(transactionHash)
+    });
+
+    this.handleCloseCancelModal();
   };
 
   render() {
