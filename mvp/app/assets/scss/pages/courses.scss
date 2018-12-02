@@ -162,14 +162,31 @@
       margin-bottom: 10px;
     }
 
+    &-student::before,
+    &-review::before {
+      content: '';
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
     &-student {
       font-size: 13px;
       color: #999999;
+
+      &::before {
+        background-image: url("/static/icon-person.svg");
+      }
     }
 
     &-review {
       font-size: 13px;
       color: #999999;
+
+      &::before {
+        background-image: url("/static/icon-fame.svg");
+      }
     }
 
     &-button {
