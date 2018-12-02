@@ -303,6 +303,7 @@
       text-align: center;
       color: #222222;
       margin-top: 30px;
+      margin-bottom: 30px;
      }
      .rating {
         width: 525px;
@@ -353,5 +354,57 @@
          }
        }
      }
+      .comment {
+        margin-top: 45px;
+        .comment-item {
+          margin-bottom: 35px;
+          display: flex;
+          .avatar {
+            width: 60px;
+            height: 60px;
+            margin-right: 25px;
+          }
+          .reviewer-info {
+            width: calc(100% - 60px);
+            .address {
+              display: flex;
+              justify-content: space-between;
+              >div:first-child {
+                font-size: 16px;
+                font-weight: 600;
+                color: #222222;
+              }
+              .rate-star {
+                background: url(/static/five-star.svg) center no-repeat;
+                background-size: contain;
+                height: 12px;
+                width: 90px;
+              }
+            }
+            .date {
+              color: #666666;
+              font-size: 14px;
+              margin: 10px 0;
+            }
+            .comment-content {
+              font-size: 14px;
+              color: #666666;
+            }
+          }
+          &:first-child {
+            .avatar {
+              background: url(/static/expert-2.svg) center no-repeat;
+              background-size: contain;
+            }
+          }
+
+          &:last-child {
+            .avatar {
+              background: url(/static/expert-3.svg) center no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
   }
 }
