@@ -266,6 +266,34 @@ class Course extends Component {
               <div className={"submit"}>
                 <a href="">Submit</a> 
               </div>
+              <div className={"comment"}>
+                <div className={"comment-item"}>
+                  <div className="avatar"></div>
+                  <div className="reviewer-info">
+                    <div className="address">
+                      <div>0x72D48BC48311109DDc5852529c116c1853F07067</div>
+                      <div className={"rate-star"}></div>
+                    </div>
+                    <div className={"date"}>2/11/2018</div>
+                    <div className="comment-content">Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c). 
+                      Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c).
+                    </div>
+                  </div>
+                </div>
+                <div className={"comment-item"}>
+                  <div className="avatar"></div>
+                  <div className="reviewer-info">
+                    <div className="address">
+                      <div>0x50dFb046885f58127E55EF8D854EA546AAB72DfB</div>
+                      <div className={"rate-star"}></div>
+                    </div>
+                    <div className={"date"}>1/11/2018</div>
+                    <div className="comment-content">Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c). 
+                      Why is it trying to individually re-sign sub frameworks, and what can I do to alleviate the issues? I need the archiving to work normally with Xcode 10, along with any future third party dependencies being added to my framework target. (This is the first dynamic framework dependency added to my Framework target. Before I was "baking in" - in-boarding all 3rd parties for ease of development purposes, but PromiseKit is difficult to inboard due to extensive dependencies on Objective-c).
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div></div>
