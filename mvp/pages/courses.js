@@ -81,6 +81,10 @@ class Courses extends Component {
               </div>
             </div>
           </div>
+
+          <div className={"courses__background-instructor container"}>
+            <img src={"/static/background-demo-instructor.png"}/>
+          </div>
         </div>
       </Layout>
     )

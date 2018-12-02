@@ -19,10 +19,25 @@
     }
   }
 
+  .social-logo {
+    max-height: 45px;
+    position: relative;
+    top: 3px;
+  }
+
   .sign-in {
     .text {
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 600;
+    }
+
+    .search {
+      width: 17px;
+      height: 17px;
+      background-image: url("/static/icon-search.svg");
+      position: relative;
+      top: 2px;
+      right: 20px;
     }
   }
 }
