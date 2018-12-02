@@ -168,11 +168,16 @@
           text-transform: uppercase;
           color: white;
           outline: none;
+          transition: all .3s;
+          cursor: pointer;
+
           &:focus {
             outline: none;
           }
+
           &:hover {
-            cursor: pointer;
+            background-color: $green-light;
+            color: white;
           }
         }
       }
