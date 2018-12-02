@@ -1,4 +1,14 @@
 # README
 
 
-Client side repo
+## Installation
+
+Install the package with:
+
+    npm install --save 
+    
+Run client with:
+
+    npm run dev
+    
+Go to http://localhost:3000/ and enjoy!
