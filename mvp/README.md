@@ -14,4 +14,4 @@ Run client with:
 Go to http://localhost:3000/ and enjoy!
 
 
-Technical stuffs: `next.js`, `react, `redux`, `redux-saga`, `web3`
+Technical stuffs: `next.js`, `react`, `redux`, `redux-saga`, `web3`
