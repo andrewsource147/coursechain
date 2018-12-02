@@ -89,6 +89,11 @@
   &__course {
     width: 31%;
     border: solid 1px #e3e3e3;
+    transition: all .3s;
+
+    &:hover {
+      box-shadow: 0 5px 7px 0 #cccccc;
+    }
 
     &-container {
       display: flex;

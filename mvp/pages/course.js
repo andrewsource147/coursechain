@@ -16,6 +16,7 @@ class Course extends Component {
     const ethWrapperContract = new web3.eth.Contract(WRAPPER_ABI, wrapperContract);
 
     this.state = {
+      isLoading: false,
       orderId: Math.floor(Math.random() * 99999999),
       isWidgetModalActive: false,
       isCourseModalActive: false,
@@ -31,7 +32,10 @@ class Course extends Component {
   };
 
   buyByTokens() {
-    this.setState({isWidgetModalActive: true});
+    this.setState({
+      isWidgetModalActive: true,
+      isLoading: true
+    });
 
     const params = {
       network: "ropsten",
@@ -75,7 +79,10 @@ class Course extends Component {
     })
 
     setTimeout(function() {
-      this.setState({isCourseBought: true});
+      this.setState({
+        isCourseBought: true,
+        isLoading: false
+      });
     }.bind(this), 3000);
   }
 
@@ -88,6 +95,8 @@ class Course extends Component {
   };
 
   handleCancelling = () => {
+    this.setState({isLoading: true});
+
     const data = this.state.ethWrapperContract.methods.cancelOrder(
       this.state.orderId,
       "0xad6d458402f60fd3bd25163575031acdce07538d"
@@ -102,8 +111,11 @@ class Course extends Component {
         web3.eth.sendTransaction({from: result, to: "0x3a20339e253f7ab78d51713eb28eac8588ae72eb", data: data}, function(err, transactionHash) {
           console.log(err)
           console.log(transactionHash)
-          this.state.setState({isCourseBought: false})
-        })    
+          this.setState({
+            isCourseBought: false,
+            isLoading: false
+          })
+        }.bind(this))
       }
     })
     
@@ -181,11 +193,15 @@ class Course extends Component {
                   </div>
                   <div className={"second-col-third-row"}>
                     {!this.state.isCourseBought && (
-                      <button onClick={() => this.buyByTokens()}>Learn now</button>
+                      <button onClick={() => this.buyByTokens()}>
+                        {this.state.isLoading ? "Loading..." : "Learn now"}
+                      </button>
                     )}
 
                     {this.state.isCourseBought && (
-                      <button onClick={() => this.handleOpenCancelModal()}>Cancel this Course</button>
+                      <button className="course-cancel-button" onClick={() => this.handleOpenCancelModal()}>
+                        {this.state.isLoading ? "Loading..." : "Cancel this Course"}
+                      </button>
                     )}
                   </div>
                   <div className={"second-col-forth-row"}>
